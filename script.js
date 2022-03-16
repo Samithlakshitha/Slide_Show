@@ -1,29 +1,22 @@
-var i = 0; 			
-var images = [];	
-var time = 3000;	
+var i = 0; 
+var timelap = 4000;			
+var images = ["pic1.jpg","pic2.jpg","pic3.jpg"];	
+	
 	 
-// Image List
-images[0] = "pic1.jpg";
-images[1] = "pic2.jpg";
-images[2] = "pic3.jpg";
-images[3] = "pic1.jpg";
-
-// Change Image
 function changeImg(){
 	document.slide.src = images[i];
 
-	// Check If Index Is Under Max
+
 	if(i < images.length - 1){
-	  // Add 1 to Index
+	  
 	  i++; 
 	} else { 
-		// Reset Back To O
+		
 		i = 0;
 	}
 
-	// Run function every x seconds
-	setTimeout("changeImg()", time);
+	setTimeout("changeImg()", timelap);
 }
 
-// Run function when page loads
+// loading function
 window.onload=changeImg;
